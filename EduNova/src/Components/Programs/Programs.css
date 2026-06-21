@@ -1,0 +1,136 @@
+.programs{
+    margin: 80px auto;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.program img{
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+}
+.program{
+    flex-basis: 31%;
+    position: relative;
+}
+.caption{
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 15, 152, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    cursor: pointer;
+    opacity: 0;
+    padding-top:70% ;
+    transition: 0.4s;
+}
+.caption img{
+    width: 60px;
+    margin-bottom: 10px;
+}
+.program:hover .caption{
+    opacity: 1;
+    padding-top: 0;
+}.programs {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    flex-wrap: wrap;
+    perspective: 1200px;
+}
+
+/* CARD */
+.program {
+    flex-basis: 31%;
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    cursor: pointer;
+
+    transition: transform 0.2s ease;
+    transform-style: preserve-3d;
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+/* IMAGE */
+.program-img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+/* zoom effect */
+.program:hover .program-img {
+    transform: scale(1.1);
+}
+
+/* CAPTION */
+.caption {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 15px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: #fff;
+    background: rgba(0,0,0,0.6);
+
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.4s ease;
+}
+
+.program:hover .caption {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ICON */
+.caption img {
+    width: 28px;
+}
+
+/* GLOW FOLLOW EFFECT */
+.glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at var(--x, 50%) var(--y, 50%),
+    rgba(255,255,255,0.25),
+    transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.program:hover .glow {
+    opacity: 1;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .program {
+        flex-basis: 100%;
+    }
+}
+/*.... media query ....*/
+@media (max-width: 650px){
+    .programs{
+        flex-direction: column;
+    }
+    .program{
+        flex-basis: 100%;
+        margin: 20px;
+    }
+}

@@ -1,0 +1,189 @@
+.hero{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(rgba(60, 51, 112, 0.7), rgba(60, 51, 112, 0.7)), url('../../assets/hero.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero-text{
+    text-align: center;
+    max-width: 800px;
+}
+.hero-text h1{
+    font-size: 60px;
+    font-weight: 600;
+}
+.hero-text p{
+    max-width: 700px;
+    margin: 10px auto 20px;
+    line-height: 1.4;
+}
+/*.... media query ....*/
+@media (max-width: 850px) {
+    .hero-text h1{
+        font-size: 40px;
+    }
+}
+@media (max-width: 650px) {
+    .hero-text h1{
+        font-size: 30px;
+        max-width: 400px;
+        margin: auto;
+}
+    .hero-text p{
+        font-size: 14px;
+        margin: 15px auto 30px;
+    }
+}
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 12px 22px;
+    background: linear-gradient(135deg, #d7c9e7, #bd93f7);
+    color: #000000;
+    font-size: 16px;
+    font-weight: 600;
+
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.25);
+}
+
+/* Hover effect */
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(201, 201, 201, 0.35);
+    background: linear-gradient(135deg, #ffffff, #ffffff);
+}
+
+/* Active click effect */
+.btn:active {
+    transform: scale(0.96);
+}
+
+/* Arrow animation */
+.btn img {
+    width: 18px;
+    transition: transform 0.3s ease;
+}
+
+.btn:hover img {
+    transform: translateX(5px);
+}
+.hero-text {
+    animation: heroFade 1s ease-in-out;
+}
+
+/* HERO ENTRY ANIMATION */
+@keyframes heroFade {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* TITLE ANIMATION */
+.hero-title {
+    animation: titleZoom 1.2s ease-in-out;
+}
+
+@keyframes titleZoom {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* PARAGRAPH ANIMATION */
+.hero-desc {
+    animation: fadeInText 1.5s ease-in-out;
+    color: #555;
+}
+
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* BUTTON ANIMATION */
+.hero-btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+/* BUTTON HOVER GLOW */
+.hero-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 77, 109, 0.4);
+}
+
+/* ARROW ANIMATION */
+.hero-arrow {
+    width: 18px;
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+/* ARROW MOVE ON HOVER */
+.hero-btn:hover .hero-arrow {
+    transform: translateX(6px);
+}
+
+/* OPTIONAL PULSE EFFECT */
+.hero-btn::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.2);
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.hero-btn:hover::after {
+    opacity: 1;
+}
+
+/*.... media query ....*/
+@media (max-width: 800px){
+    .about{
+        flex-direction: column;
+    }
+    .about-left{
+        flex-basis: 100%;
+        margin: 20px;
+        order: 2;
+    }
+    .about-right{
+        flex-basis: 100%;
+    }
+
+
+}
